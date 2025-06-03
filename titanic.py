@@ -30,12 +30,11 @@ def preprocess_Data(df):
     df["Sex"] = df["Sex"].map({'male': 1, 'female': 0})
 
     # Feature Engineering
-    """
     df["FamilySize"] = df["SibSp"] + df["Parch"]
     df["IsAlone"] = np.where(df["FamilySize"] == 0, 1, 0)
     df["FareBin"] = pd.qcut(df["Fare"], 4, labels=False)
     df["AgeBin"] = pd.cut(df["Age"], bins=[0, 12, 20, 40, 60, np.inf], labels=False)
-    """
+
     return df
 
 # 3. Fill in missing ages
